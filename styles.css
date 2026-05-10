@@ -1,0 +1,278 @@
+/* بورصة الوحيد Pro - Dark Theme Styles */
+
+:root {
+  --bg-primary: #0E1117;
+  --bg-secondary: #1A1F2E;
+  --bg-card: #161B26;
+  --accent-green: #00C896;
+  --accent-red: #FF4757;
+  --accent-gold: #FFD700;
+  --accent-blue: #4A90E2;
+  --accent-purple: #7B61FF;
+  --text-primary: #E6E9F0;
+  --text-secondary: #8A92A6;
+  --border: #2A3142;
+}
+
+/* Hide Streamlit Footer/Menu */
+#MainMenu, footer { visibility: hidden; }
+
+/* Main App */
+.stApp {
+  background: linear-gradient(135deg, #0E1117 0%, #11141C 100%);
+  direction: rtl;
+}
+
+/* Logo Header */
+.app-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 24px;
+  background: linear-gradient(90deg, rgba(0,40,140,0.4) 0%, rgba(0,30,80,0.2) 100%);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 20px rgba(0, 200, 150, 0.15);
+}
+
+.app-header h1 {
+  margin: 0;
+  background: linear-gradient(90deg, #00C896 0%, #FFD700 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
+  font-size: 2rem;
+  letter-spacing: 0.5px;
+}
+
+.app-header .tagline {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-top: 4px;
+}
+
+/* Cards */
+.metric-card {
+  background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-secondary) 100%);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  transition: all 0.3s ease;
+}
+
+.metric-card:hover {
+  border-color: var(--accent-green);
+  box-shadow: 0 0 20px rgba(0, 200, 150, 0.2);
+}
+
+.metric-card .label {
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.metric-card .value {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.metric-card .delta {
+  font-size: 0.9rem;
+  margin-top: 4px;
+}
+
+.delta-pos { color: var(--accent-green); }
+.delta-neg { color: var(--accent-red); }
+.delta-neu { color: var(--text-secondary); }
+
+/* Stock Cards Grid */
+.stock-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.stock-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.stock-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent-green);
+  box-shadow: 0 4px 16px rgba(0, 200, 150, 0.15);
+}
+
+.stock-card .ticker {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--accent-gold);
+}
+
+.stock-card .name {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin: 4px 0;
+}
+
+.stock-card .price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.stock-card .price {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.stock-card .change {
+  font-size: 0.85rem;
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+
+.change-pos {
+  background: rgba(0, 200, 150, 0.15);
+  color: var(--accent-green);
+}
+
+.change-neg {
+  background: rgba(255, 71, 87, 0.15);
+  color: var(--accent-red);
+}
+
+/* MA Indicator badges */
+.ma-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  margin: 2px;
+}
+
+.ma-above {
+  background: rgba(0, 200, 150, 0.2);
+  color: var(--accent-green);
+  border: 1px solid var(--accent-green);
+}
+
+.ma-below {
+  background: rgba(255, 71, 87, 0.2);
+  color: var(--accent-red);
+  border: 1px solid var(--accent-red);
+}
+
+/* Buttons */
+.stButton button {
+  background: linear-gradient(90deg, var(--accent-green) 0%, #00A87A 100%);
+  border: none;
+  color: white;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+
+.stButton button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 200, 150, 0.4);
+}
+
+/* Sidebar */
+section[data-testid="stSidebar"] {
+  background: linear-gradient(180deg, #0A0E18 0%, #11141C 100%);
+  border-right: 1px solid var(--border);
+}
+
+/* Tabs */
+.stTabs [data-baseweb="tab-list"] {
+  gap: 8px;
+  background: var(--bg-secondary);
+  padding: 6px;
+  border-radius: 10px;
+}
+
+.stTabs [data-baseweb="tab"] {
+  background: transparent;
+  border-radius: 8px;
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+.stTabs [aria-selected="true"] {
+  background: linear-gradient(90deg, var(--accent-green) 0%, #00A87A 100%) !important;
+  color: white !important;
+}
+
+/* Dataframes */
+.stDataFrame, .dataframe {
+  background: var(--bg-card) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 8px;
+}
+
+/* News items */
+.news-card {
+  background: var(--bg-card);
+  border-left: 4px solid var(--accent-blue);
+  padding: 12px 16px;
+  margin: 8px 0;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+
+.news-card:hover {
+  border-left-color: var(--accent-green);
+  background: var(--bg-secondary);
+}
+
+.news-card .news-source {
+  font-size: 0.75rem;
+  color: var(--accent-gold);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.news-card a {
+  color: var(--text-primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.news-card a:hover { color: var(--accent-green); }
+
+/* Alert items */
+.alert-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px;
+  margin: 6px 0;
+}
+
+.alert-triggered { border-color: var(--accent-green); }
+.alert-active { border-color: var(--accent-blue); }
+.alert-inactive { opacity: 0.6; }
+
+/* Fibonacci Levels */
+.fib-level {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 12px;
+  margin: 2px 0;
+  border-radius: 4px;
+  background: var(--bg-card);
+  font-family: 'Courier New', monospace;
+}
+
+.fib-current { background: rgba(255, 215, 0, 0.15); border: 1px solid var(--accent-gold); }
